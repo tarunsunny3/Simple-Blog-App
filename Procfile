@@ -1,1 +1,1 @@
-web: node src/server.js
+web: node --exec babel-node src/server.js
