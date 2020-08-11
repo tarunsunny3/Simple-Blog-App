@@ -1,15 +1,18 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import path from "path";
 import cors from "cors";
 import Articles from "./models/ArticleSchema";
-
+const mongoURI = process.env.MONGODB_URI;
 mongoose
-  .connect(
-    "mongodb+srv://Tarun:tarun0508@cluster0-2qgfp.mongodb.net/blog-app?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
-  )
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
   .then(() => console.log("MongoDb connected successfully"));
 const app = express();
 app.use(cors());
