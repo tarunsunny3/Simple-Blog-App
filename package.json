@@ -22,7 +22,7 @@
     "build": "npm run clean && npm run babel-build",
     "babel-build": "babel -d ./build ./src -s",
     "clean": "mkdir build",
-    "heroku-postbuild": "cd my-blog && npm install && npm run build"
+    "heroku-postbuild": "cd ../my-blog && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
